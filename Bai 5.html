@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+
+<div class="container">
+    <h2>Study result</h2>
+    <label for="testScore">Test 1:</label>
+    <input type="number" id="testScore" min="0" max="10">
+
+    <label for="midtermScore">Midterm exam:</label>
+    <input type="number" id="midtermScore" min="0" max="10">
+
+    <label for="finalScore">Final exam:</label>
+    <input type="number" id="finalScore" min="0" max="10">
+
+    <button onclick="calculateRank()">Rank</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculateRank() {
+        let testScore = parseFloat(document.getElementById('testScore').value);
+        let midtermScore = parseFloat(document.getElementById('midtermScore').value);
+        let finalScore = parseFloat(document.getElementById('finalScore').value);
+        let averageScore = (testScore + midtermScore + finalScore) / 3;
+        let rank;
+
+        if (averageScore >= 8 && averageScore <= 10) {
+            rank = "Exellent";
+        } else if (averageScore >= 6 && averageScore < 8) {
+            rank = "Good";
+        } else if (averageScore > 4 && averageScore < 6) {
+            rank = "Average";
+        } else if (averageScore >= 0 && averageScore <= 4) {
+            rank = "Bad";
+        } else {
+            rank = "Not a valid number";
+        }
+
+        document.getElementById('result').innerText = "Average score: " + averageScore + " - Your ranking: " + rank;
+    }
+</script>
+
+</body>
+</html>

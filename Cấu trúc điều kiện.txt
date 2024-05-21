@@ -1,0 +1,7 @@
+Cấu trúc điều kiện: 
+IF(<điều kiện>) {
+    <khối lệnh thực thi>
+} else {}
+(đúng thì sẽ chạy ko thi else)
+
+if(bậc thang) 

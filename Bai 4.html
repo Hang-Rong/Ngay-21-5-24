@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Biggest number</h3>
+    <label for="numbera">Number a</label>
+    <input type="number" name="" id="numbera">
+    <label for="numberb">Number b</label>
+    <input type="number" name="" id="numberb">
+    <label for="numberc">Number c</label>
+    <input type="number" name="" id="numberc">
+
+    <button onclick="Tinh()">Click</button>
+    <br>
+    <br>
+    <div id="display"></div>
+    <script>
+        function Tinh(){
+
+        let a=parseFloat(document.getElementById('numbera').value);
+        let b=parseFloat(document.getElementById('numberb').value);
+        let c=parseFloat(document.getElementById('numberc').value);
+        let result;
+
+        if (a>b && a>c){
+            result="a";
+        } else if(c>a && c>b){
+            result="c";
+        } else if (b>a && b>c ) {
+            result="b";
+        } else if ( a== b && b==c){
+            result="They are equal";
+        }
+        document.getElementById('display').innerText= "Biggest number is:" + result;
+    }
+    </script>
+</body>
+</html>

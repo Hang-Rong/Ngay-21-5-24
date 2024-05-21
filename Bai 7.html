@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2>Phone bill caculator</h2>
+<label for="minutes">Minutes:</label>
+<input type="number" id="minutes">
+
+<label for="messages">Number of messages:</label>
+<input type="number" id="messages">
+
+<button onclick="calculateBill()">Charge</button>
+<br>
+<br>
+<div id="result"></div>
+
+<script>
+    function calculateBill() {
+        let minutes = parseInt(document.getElementById('minutes').value);
+        let messages = parseInt(document.getElementById('messages').value);
+        let callRate = 50; // Giá cước cho mỗi phút gọi 
+        let messageRate = 200; // Giá cước cho mỗi tin nhắn gửi 
+        let baseFee = 2000; // Phí cố định 
+
+        let callCost = minutes * callRate;
+        let messageCost = messages * messageRate;
+        let totalCost = baseFee + callCost + messageCost;
+
+        document.getElementById('result').innerHTML = "Total charge: VND" + totalCost
+    }
+</script>
+
+</body>
+</html>

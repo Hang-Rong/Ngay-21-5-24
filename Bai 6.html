@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2>Extra payment</h2>
+<label for="salesAmount">Sale Amount (VND):</label>
+<input type="number" id="salesAmount">
+
+<button onclick="calculateCommission()">Bonus</button>
+
+<div id="result"></div>
+
+<script>
+    function calculateCommission() {
+        let salesAmount = parseFloat(document.getElementById('salesAmount').value);
+        let commissionRate;
+        let commission;
+
+        if (salesAmount < 15000000) {
+            commissionRate = 0.05; // Tổng tiền đã bán và tỷ lệ thưởng trên tổng doanh số
+        } else if (salesAmount < 5000000) {
+            commissionRate = 0.1;
+        } else {
+            commissionRate = 0.15;
+        }
+
+        commission = salesAmount * commissionRate;
+        
+        document.getElementById('result').innerHTML = "Bonus recive: VND" + commission;
+    }
+</script>
+
+</body>
+</html>
